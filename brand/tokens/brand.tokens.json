@@ -1,0 +1,26 @@
+{
+  "$schema": "design-tokens",
+  "brand": { "name": "Your AI Side", "wordmark": "youraiside", "domain": "youraiside.com", "tagline": "Put AI on your side." },
+  "color": {
+    "light": { "bg": "#F4F2EC", "surface": "#FBFAF7", "fg": "#16171A", "accent": "#F04E23", "muted": "#6E7076", "line": "#DBD9D2", "stone": "#C9C3B6" },
+    "dark":  { "bg": "#141414", "surface": "#1C1D20", "fg": "#F4F2EC", "accent": "#FF6A42", "muted": "#8A8B90", "line": "#2A2B2E", "stone": "#4A463C" },
+    "functional": { "info": "#2447E0", "success": "#0F8A66", "warning": "#E8A13C", "error": "#D92D20" }
+  },
+  "typography": {
+    "display": { "family": "Inter Tight", "premium": "Neue Haas Grotesk", "weights": [600, 700], "tracking": "-0.02em to -0.035em" },
+    "body":    { "family": "Inter", "weights": [400, 500], "tracking": "0" },
+    "mono":    { "family": "JetBrains Mono", "premium": "Söhne Mono", "weights": [400], "transform": "uppercase", "tracking": "0.14em to 0.2em" },
+    "persianDisplay": { "family": "Estedad", "weights": [500, 700, 800] },
+    "persianBody":    { "family": "Vazirmatn", "weights": [300, 400, 500] },
+    "scale": { "display": [64, 44, 30, 20], "body": [16, 17], "caption": [13, 14], "label": [10, 11] }
+  },
+  "radius": { "sm": 8, "md": 14, "lg": 18, "xl": 22, "appIconPercent": 22.37 },
+  "logo": {
+    "viewBox": "0 0 100 100",
+    "leftHalf":  { "path": "M46 36 A22 22 0 0 0 46 80 Z", "meaning": "you", "primary": "outlined stroke-width 5", "small": "filled fg" },
+    "rightHalf": { "path": "M54 20 A22 22 0 0 1 54 64 Z", "meaning": "AI", "fill": "accent, always filled" },
+    "seam": { "gap": 8, "rule": "never narrow, fill, or bridge" },
+    "minSizePx": { "outlined": 30, "solid": 14, "horizontalLockupHeight": 22, "wordmark": 11 },
+    "clearSpace": "≥ 50% of mark width on all sides"
+  }
+}

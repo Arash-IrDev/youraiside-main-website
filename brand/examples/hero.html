@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your AI Side — reference hero</title>
+<link rel="icon" href="../icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens/brand.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);transition:background .3s,color .3s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid var(--line)}
+.navlock{display:flex;align-items:center;gap:10px}
+.navlock svg{width:24px;height:24px}
+.wordmark{font-size:19px}
+.hero{max-width:1080px;margin:0 auto;padding:110px 40px 90px;text-align:center}
+.hero svg.mark{width:120px;height:120px;margin-bottom:36px}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(38px,6vw,64px);letter-spacing:var(--track-display);line-height:1.08}
+h1 .period{color:var(--accent)}
+.sub{margin-top:20px;font-size:17px;color:var(--muted);max-width:52ch;margin-inline:auto}
+.cta{margin-top:36px;display:inline-flex;gap:12px}
+.btn{font-family:var(--font-body);font-weight:500;font-size:15px;padding:12px 22px;border-radius:var(--radius-md);border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#FFF}
+.toggle{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;background:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--muted);cursor:pointer}
+/* the seam — signature split section */
+.seam-split{max-width:1080px;margin:0 auto 100px;padding:0 40px;display:flex;gap:var(--seam-gap);align-items:stretch}
+.seam-split .block{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px;min-height:230px}
+.seam-split .block.raised{transform:translateY(calc(-1*var(--seam-offset)/2));background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.seam-split h3{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-.02em;margin-bottom:10px}
+.seam-split p{font-size:15px;line-height:1.7;opacity:.8}
+@media(max-width:720px){.seam-split{flex-direction:column}.seam-split .block.raised{transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+ <div class="navlock">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M46 36 A22 22 0 0 0 46 80 Z" fill="var(--fg)"/><path d="M54 20 A22 22 0 0 1 54 64 Z" fill="var(--accent)"/></svg>
+  <span class="wordmark">your<span class="ai">ai</span>side</span>
+ </div>
+ <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','dark')">THEME</button>
+</nav>
+<section class="hero">
+ <svg class="mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M46 36 A22 22 0 0 0 46 80 Z" fill="none" stroke="var(--fg)" stroke-width="5"/><path d="M54 20 A22 22 0 0 1 54 64 Z" fill="var(--accent)"/></svg>
+ <div class="eyebrow" style="margin-bottom:16px">THE AI PRODUCT FAMILY</div>
+ <h1>Put AI on your side<span class="period">.</span></h1>
+ <p class="sub">Tools, agents and automation that work for you — quietly, precisely, on your side of the screen.</p>
+ <div class="cta"><button class="btn primary">Explore products</button><button class="btn">For teams</button></div>
+</section>
+<section class="seam-split">
+ <div class="block"><h3>Your work</h3><p>Everything stays yours: your context, your files, your decisions. The interface is calm because the work is serious.</p></div>
+ <div class="block raised"><h3>Your AI side</h3><p>Agents and automation standing next to it — raised, ready, one seam away. This offset split echoes the mark; use it once per page.</p></div>
+</section>
+<script>
+// theme toggle handles removal too
+document.querySelector('.toggle').onclick=()=>{const h=document.documentElement;h.hasAttribute('data-theme')?h.removeAttribute('data-theme'):h.setAttribute('data-theme','dark')};
+</script>
+</body>
+</html>

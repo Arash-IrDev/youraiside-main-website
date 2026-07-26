@@ -1,0 +1,22 @@
+/* Your AI Side — brand tokens v1.0. Import once; theme via [data-theme="dark"]. */
+:root{
+  --bg:#F4F2EC; --surface:#FBFAF7; --fg:#16171A; --accent:#F04E23;
+  --muted:#6E7076; --line:#DBD9D2; --stone:#C9C3B6;
+  --info:#2447E0; --success:#0F8A66; --warning:#E8A13C; --error:#D92D20;
+  --font-display:"Inter Tight",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --font-fa-display:"Estedad","Vazirmatn",sans-serif;
+  --font-fa-body:"Vazirmatn",sans-serif;
+  --track-display:-0.03em; --track-wordmark:-0.035em; --track-label:0.16em;
+  --radius-sm:8px; --radius-md:14px; --radius-lg:18px; --radius-xl:22px;
+  --seam-gap:8px; --seam-offset:16%;
+}
+[data-theme="dark"]{
+  --bg:#141414; --surface:#1C1D20; --fg:#F4F2EC; --accent:#FF6A42;
+  --muted:#8A8B90; --line:#2A2B2E; --stone:#4A463C;
+}
+.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--track-label);text-transform:uppercase;color:var(--muted)}
+.wordmark{font-family:var(--font-display);font-weight:700;letter-spacing:var(--track-wordmark);text-transform:lowercase}
+.wordmark .ai{color:var(--accent)}
+.tagline-period{color:var(--accent)}
