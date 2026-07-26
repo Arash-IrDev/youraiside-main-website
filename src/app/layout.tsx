@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.youraiside.com"),
   title: "Your AI Side",
   description: "Put AI on your side.",
 };

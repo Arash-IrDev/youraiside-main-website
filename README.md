@@ -2,6 +2,11 @@
 
 Official website for **Your AI Side**.
 
+## Production
+
+- https://www.youraiside.com (primary)
+- https://youraiside.com (redirects to `www`)
+
 ## Getting Started
 
 ```bash
