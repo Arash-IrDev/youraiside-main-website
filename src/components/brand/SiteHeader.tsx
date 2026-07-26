@@ -8,11 +8,12 @@ export function SiteHeader() {
     <header className="flex items-center justify-between border-b border-line px-6 py-5 sm:px-10">
       <Link
         href="/"
-        className="flex items-center gap-2.5 text-fg no-underline"
+        className="flex items-center gap-0 text-fg no-underline"
         aria-label="Your AI Side home"
       >
-        <Mark variant="solid" className="size-6" />
-        <Wordmark className="text-[19px] leading-none" />
+        <Mark variant="outlined" className="size-10" />
+        {/* Optical nudge: mark SVG has empty right padding inside the viewBox */}
+        <Wordmark className="-ml-1 text-[19px] leading-none" />
       </Link>
       <ThemeToggle />
     </header>
