@@ -33,8 +33,8 @@ export const projects: Project[] = [
     description:
       "Random Army is a deterministic, simulation-driven 3D strategy game for the web. Before combat begins, you study army compositions and win probabilities, commit to an outcome, and shape the run through smart picks among proposed armies, costly rearrangements, and score management. An independent seed-based engine reconstructs battles exactly and computes trustworthy win odds, while Three.js renders large-scale fights directly in the browser. It sits at the intersection of game design, simulation, probability analysis, and modern software architecture — where victory is not just raw force, but better prediction and sharper decisions.",
     domain: "army.youraiside.com",
-    status: "coming-soon",
-    href: null,
+    status: "live",
+    href: "https://army.youraiside.com",
     tags: ["games", "simulation", "webgl"],
   },
   {
