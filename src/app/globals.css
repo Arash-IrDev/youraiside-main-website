@@ -77,3 +77,7 @@ body {
 .reveal-seam {
   animation: reveal-up 0.4s ease 0.22s both;
 }
+
+.reveal-projects {
+  animation: reveal-up 0.4s ease 0.28s both;
+}

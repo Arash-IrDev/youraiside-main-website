@@ -1,5 +1,6 @@
 import { Mark } from "@/components/brand/Mark";
 import { SiteHeader } from "@/components/brand/SiteHeader";
+import { ProjectsGallery } from "@/components/ProjectsGallery";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
           <div className="reveal-cta mt-9 inline-flex flex-wrap items-center justify-center gap-3">
             <a
-              href="#products"
+              href="#projects"
               className="rounded-[var(--radius-md)] border border-accent bg-accent px-[22px] py-3 text-[15px] font-medium text-white no-underline transition-opacity hover:opacity-90"
             >
               Explore products
@@ -37,7 +38,7 @@ export default function Home() {
 
         <section
           id="products"
-          className="reveal-seam mx-auto mb-24 flex max-w-[1080px] flex-col gap-[var(--seam-gap)] px-6 sm:mb-[100px] sm:flex-row sm:px-10"
+          className="reveal-seam mx-auto mb-16 flex max-w-[1080px] flex-col gap-[var(--seam-gap)] px-6 sm:mb-20 sm:flex-row sm:px-10"
         >
           <div className="min-h-[230px] flex-1 rounded-[var(--radius-lg)] border border-line bg-surface p-[34px]">
             <h2 className="mb-2.5 font-display text-[22px] font-semibold tracking-[-0.02em]">
@@ -61,6 +62,8 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        <ProjectsGallery />
       </main>
 
       <footer className="border-t border-line px-6 py-8 sm:px-10">
