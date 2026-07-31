@@ -72,6 +72,17 @@ export default function Home() {
             © {new Date().getFullYear()} Your AI Side
           </p>
           <p className="text-[13px] text-muted">
+            Built by{" "}
+            <a
+              href="https://www.linkedin.com/in/arash-banijamali/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fg underline decoration-line underline-offset-2 transition-colors hover:decoration-fg"
+            >
+              Arash Banijamali
+            </a>
+          </p>
+          <p className="text-[13px] text-muted">
             Put AI on your side
             <span className="tagline-period">.</span>
           </p>
