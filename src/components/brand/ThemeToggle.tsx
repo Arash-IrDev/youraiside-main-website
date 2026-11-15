@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
@@ -13,20 +13,48 @@ function applyTheme(theme: Theme) {
   }
 }
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+// The resolved theme is kept outside React and read with useSyncExternalStore,
+// so the browser's value reaches the button without a setState in an effect.
+// It is resolved once, on first read in the browser, then changed only by the toggle.
+let currentTheme: Theme | null = null;
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getTheme(): Theme {
+  if (currentTheme === null) {
     const stored = window.localStorage.getItem("yas-theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const next: Theme =
+    currentTheme =
       stored === "dark" || stored === "light"
         ? stored
         : prefersDark
           ? "dark"
           : "light";
-    setTheme(next);
-    applyTheme(next);
+  }
+  return currentTheme;
+}
+
+// The server render and the hydration pass always show the light label.
+function getServerTheme(): Theme {
+  return "light";
+}
+
+function setTheme(theme: Theme) {
+  currentTheme = theme;
+  listeners.forEach((listener) => listener());
+}
+
+export function ThemeToggle() {
+  const theme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
+
+  useEffect(() => {
+    applyTheme(getTheme());
   }, []);
 
   function toggle() {
