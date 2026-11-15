@@ -5,6 +5,9 @@
   --font-display: var(--font-inter-tight), "Inter Tight", system-ui, sans-serif;
   --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+  /* Estedad (Persian display) is not loaded yet, so both roles use Vazirmatn. */
+  --font-fa-display: var(--font-vazirmatn), "Vazirmatn", system-ui, sans-serif;
+  --font-fa-body: var(--font-vazirmatn), "Vazirmatn", system-ui, sans-serif;
 }
 
 @theme inline {
@@ -30,6 +33,12 @@ body {
   color: var(--fg);
   font-family: var(--font-body);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Any Persian or Arabic text, anywhere on the site, is set in Vazirmatn. */
+:lang(fa),
+:lang(ar) {
+  font-family: var(--font-fa-body);
 }
 
 @media (prefers-reduced-motion: reduce) {
