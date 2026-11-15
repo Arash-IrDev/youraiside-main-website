@@ -47,6 +47,7 @@ export const metadata: Metadata = {
   },
   description:
     "Put AI on your side. Tools, agents and automation that work for you — quietly, precisely.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Your AI Side",
     description: "Put AI on your side.",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Your AI Side",
     description: "Put AI on your side.",
   },

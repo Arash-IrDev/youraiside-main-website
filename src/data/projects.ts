@@ -21,8 +21,11 @@ export type Project = {
 };
 
 /**
- * Product gallery source of truth.
- * Append new entries here — the homepage list renders this array in order.
+ * Product register source of truth.
+ * Append new entries here — the homepage renders this array in order, one
+ * tile per product, with `description` behind the tile's "About" disclosure.
+ * A tile's width and optional demo are set by `id` in `tiles` in
+ * `src/app/page.tsx`; products without an entry get a half-width tile.
  */
 export const projects: Project[] = [
   {

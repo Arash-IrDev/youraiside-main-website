@@ -23,6 +23,26 @@ Open [http://localhost:3000](http://localhost:3000).
 - TypeScript
 - Tailwind CSS 4
 
+## Structure
+
+- `src/app/page.tsx` — the homepage (the only page): hero, seam section,
+  product register, footer
+- `src/components/home/` — homepage pieces: the self-drawing mark
+  (`SeamFigure`), the scroll-driven seam (`ScrollSeam`), product demos
+  (`demos`), the motion switch (`motion`) and their CSS (`home.module.css`)
+- `src/components/brand/` — `Mark`, `Wordmark`, `ThemeToggle`
+- `src/data/projects.ts` — product list; add a product here
+- `src/app/opengraph-image.tsx` — link-preview image, built at deploy time
+- `src/app/robots.ts`, `src/app/sitemap.ts` — add new public routes to the sitemap
+
+Motion follows `brand/BRAND.md` §8: every animation has a finished resting
+state, honors `prefers-reduced-motion`, and stops with the page's Motion switch.
+
+## Deploying
+
+Vercel deploys `main` to production and every pull request to a preview URL.
+Merge to `main` to publish.
+
 ## Brand
 
 Design source of truth lives in [`brand/`](./brand/) (spec, tokens, logos).
