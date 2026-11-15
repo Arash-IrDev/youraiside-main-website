@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type PointerEvent } from "react";
-import styles from "./hybrid.module.css";
+import styles from "./home.module.css";
 import { useMotion } from "./motion";
 
 const gridPaper = {

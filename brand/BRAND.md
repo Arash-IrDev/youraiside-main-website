@@ -141,3 +141,32 @@ gradients, glow/neon effects, 3D bevels, a second brand accent, descending or
 mirrored mark, filled seam, retyped wordmark with wrong tracking, black `#000`
 or white `#FFF` as page backgrounds (always Carbon/Bone), accent-colored body
 text.
+
+## 8. Motion
+
+Motion explains; it never decorates. If a movement does not show how the brand
+or a product works, remove it.
+
+Default: opacity/translate reveals of 400ms or less, once, on load.
+
+Three longer, signature motions are allowed. Use each at most once per page:
+
+| motion | what it shows | limits |
+|---|---|---|
+| **Mark draw-in** | guides appear, the "you" half is drawn, the "AI" half appears level and lifts 16 units | once on load, under 2s total, must end on the exact mark geometry (§2.1) |
+| **Seam close** | two blocks start apart and level, then close to the 8px seam while the emphasized block rises by the seam offset | tied to scroll position, never autoplays |
+| **Product demo** | a small loop inside a product tile that shows what that product does | runs only while on screen; one step every 1.5s or slower, or text typed at reading speed; foreground/neutral colors only (no accent) |
+
+Rules for all motion:
+
+- Honor `prefers-reduced-motion`: show the finished state, no movement.
+- Any page with a looping motion has a visible switch that stops all motion.
+- The resting (final) state must be complete without JavaScript.
+- Sensitive products (health, clinical, safety) stay still.
+- Pointer feedback is fine when it only answers the pointer and stays
+  hairline-weight (example: the measuring crosshair on the mark figure).
+
+Forbidden: video backgrounds, parallax, particles, 3D scenes, cursor trails,
+autoplaying carousels, anything that glows, pulses or bounces.
+
+Reference implementation: `src/components/home/` (homepage).
