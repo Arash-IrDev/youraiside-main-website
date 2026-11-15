@@ -1,0 +1,132 @@
+/*
+ * Motion for the hybrid direction.
+ * Every rule's resting style is the finished state, so with motion off
+ * (or reduced motion) the page simply shows the end result.
+ */
+
+/* ── Mark: guides wipe in, "you" is drawn, "AI" appears level and lifts ── */
+
+.guides {
+  clip-path: inset(0);
+  animation: wipe 700ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+@keyframes wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* The dash exists only while drawing; afterwards the path is the plain mark. */
+.you {
+  animation: draw 600ms ease-out 450ms backwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 16 units is the mark's own vertical offset: AI starts level with you. */
+.ai {
+  animation: lift 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 950ms backwards;
+}
+
+@keyframes lift {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(16px);
+  }
+}
+
+/* ── Seam: two blocks close to the 8px seam while the AI block rises ── */
+
+.seam {
+  --p: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--seam-gap);
+}
+
+@media (min-width: 640px) {
+  .seam {
+    flex-direction: row;
+    padding-top: 44px;
+  }
+
+  .seamYou {
+    transform: translateX(calc((1 - var(--p)) * -28px));
+  }
+
+  .seamAi {
+    transform: translate(
+      calc((1 - var(--p)) * 28px),
+      calc(var(--p) * -1 * var(--seam-offset))
+    );
+  }
+}
+
+/* ── ReelFlow: pipeline steps take turns ── */
+
+.step {
+  animation: stepOn 7.5s linear infinite;
+  animation-delay: calc(var(--i) * 1.5s);
+}
+
+@keyframes stepOn {
+  0%,
+  18% {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--bg);
+  }
+  22%,
+  100% {
+    background: var(--bg);
+    border-color: var(--line);
+    color: var(--fg);
+  }
+}
+
+/* ── TwinTask: the sentence changes language ── */
+
+.swap {
+  animation: swap 300ms ease both;
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ── Random Army: odds settle ── */
+
+.bar {
+  transition: width 400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ── Motion switched off ── */
+
+:global([data-motion="off"]) .guides,
+:global([data-motion="off"]) .you,
+:global([data-motion="off"]) .ai,
+:global([data-motion="off"]) .step,
+:global([data-motion="off"]) .swap {
+  animation: none;
+}
+
+:global([data-motion="off"]) .bar {
+  transition: none;
+}

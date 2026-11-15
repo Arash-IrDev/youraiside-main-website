@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import {
+  Inter,
+  Inter_Tight,
+  JetBrains_Mono,
+  Vazirmatn,
+} from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -22,6 +27,16 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400"],
   variable: "--font-jetbrains",
   display: "swap",
+});
+
+// Persian and Arabic text. Variable font, self-hosted by next/font at build
+// time. Not preloaded: the browser fetches it only on pages that show
+// Persian or Arabic script.
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -54,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} ${vazirmatn.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
