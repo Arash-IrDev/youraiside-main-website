@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import styles from "./hybrid.module.css";
+import styles from "./home.module.css";
 import { useMotion } from "./motion";
 
 /**

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import styles from "./hybrid.module.css";
+import styles from "./home.module.css";
 import { useInView, useMotion } from "./motion";
 
 /** Runs `tick` on an interval while the demo is on screen and motion is on. */

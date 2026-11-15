@@ -48,6 +48,9 @@ spacing, restrained motion (opacity/translate reveals ≤ 400ms, respect
 `prefers-reduced-motion`), 1px borders, no drop-shadow soup, mono eyebrows,
 sentence case. When in doubt, remove decoration.
 
+Longer motion is allowed only in the three signature forms in BRAND.md §8
+(mark draw-in, seam close, product demo), under the limits written there.
+
 ## Asset map
 ```
 logo/       mark-*, wordmark-*, lockup-*          (SVG, light/dark/mono/solid)
