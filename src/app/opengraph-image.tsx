@@ -110,7 +110,6 @@ export default async function OpengraphImage() {
               borderRight: `2px solid ${c.line}`,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse needs a plain img */}
             <img
               src={`data:image/svg+xml;base64,${lockup.toString("base64")}`}
               width={232}
@@ -174,7 +173,6 @@ export default async function OpengraphImage() {
               backgroundSize: "28px 28px",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse needs a plain img */}
             <img src={markWithGuides()} width={420} height={420} alt="" />
           </div>
         </div>
